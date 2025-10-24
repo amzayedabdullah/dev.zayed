@@ -4,12 +4,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>dev.zayed — Projects</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
   
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Reset & Body --- */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Poppins', sans-serif;
+      color:#e0f7ff;
+      background:black;
+      overflow-x:hidden;
+      position:relative;
+    }
+
+    /* --- Matrix Canvas --- */
+    canvas#matrixCanvas {
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:0;
+      pointer-events:none;
+      background:black;
+    }
+
+    /* --- Hero Section --- */
+    .projects-hero {
+      text-align:center;
+      padding:4rem 1rem;
+      font-family:'Orbitron', sans-serif;
+      font-size:2.5rem;
+      color:#00ffff;
+      text-shadow:0 0 20px #00ffff;
+      z-index:1; position:relative;
+    }
+
+    /* --- Grid Section --- */
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:2rem;
+      max-width:1100px;
+      margin:2rem auto;
+      padding:0 1rem;
+      z-index:1; position:relative;
+    }
+
+    .card {
+      background:rgba(255,255,255,0.05);
+      padding:1.5rem;
+      border-radius:20px;
+      box-shadow:0 0 20px rgba(0,255,255,0.2);
+      transition: all 0.4s ease;
+      backdrop-filter:blur(10px);
+    }
+
+    .card h3 {
+      font-family:'Orbitron', sans-serif;
+      font-size:1.5rem;
+      color:#00ffff;
+      margin-bottom:0.8rem;
+      text-shadow:0 0 10px #00ffff;
+    }
+
+    .card p {
+      line-height:1.6;
+      color:#bdefff;
+      font-size:1rem;
+    }
+
+    .card:hover {
+      transform:scale(1.05);
+      box-shadow:0 0 40px #00ffff;
+    }
+
+    /* --- Back Button --- */
+    .btn-back {
+      display:inline-block;
+      margin:3rem auto;
+      padding:10px 25px;
+      border-radius:25px;
+      border:2px solid #00ffff;
+      color:#00ffff;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s ease;
+      text-align:center;
+      z-index:1; position:relative;
+    }
+
+    .btn-back:hover {
+      background:#00ffff;
+      color:#000;
+      box-shadow:0 0 25px #00ffff;
+    }
+
+    /* --- Responsive --- */
+    @media(max-width:768px){ .projects-hero { font-size:2rem; } }
+  </style>
+</head>
+
+<body>
+
+  <!-- Matrix Rain Background -->
+  <canvas id="matrixCanvas"></canvas>
+
   <section class="projects-hero">
-    <h1>My Projects 🚀</h1>
+    <h3>My Projects</h3>
   </section>
 
   <section class="grid">
@@ -21,11 +123,60 @@
         movie suggestions automatically.
       </p>
     </div>
+
     <!-- Add more project cards here -->
+    <div class="card">
+      <h3>AI Plant Disease Detection</h3>
+      <p>
+        Real-time plant disease detection using ESP32-CAM + Edge Impulse. Sends
+        SMS alerts via GSM module to help farmers act fast.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Memory Builder for Alzheimer's</h3>
+      <p>
+        Raspberry Pi-based memory support system that helps Alzheimer's patients
+        remember daily activities and loved ones using AI-powered reminders.
+      </p>
+    </div>
   </section>
+  <div class="back-wrapper" style="text-align:center; z-index:1; position:relative; margin:3rem auto;">
+    <a href="index.html" class="btn-back" aria-label="Back to Home">← Back to Home</a>
+  </div>
 
-  <a href="index.html" class="btn-back">← Back to Home</a>
+  <script>
+    // --- Matrix Rain Effect ---
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
 
-  <script src="script.js"></script>
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const letters = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレゲゼデベペオォコソトノホモヨョロゴゾドボポ0123456789ABCDEF";
+    const fontSize = 12;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(0);
+
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0,0,0,0.05)";
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+      ctx.fillStyle = "#97FFFFFF";
+      ctx.font = fontSize + "px monospace";
+      for(let i=0; i<drops.length; i++){
+        const text = letters.charAt(Math.floor(Math.random()*letters.length));
+        ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+        if(drops[i]*fontSize > canvas.height && Math.random() > 0.975) drops[i]=1;
+        drops[i]++;
+      }
+      requestAnimationFrame(drawMatrix);
+    }
+    drawMatrix();
+  </script>
+
 </body>
 </html>
