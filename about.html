@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About — A. M. Zayed Abdullah</title>
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@600&display=swap"
         rel="stylesheet">
 
     <style>
-        /* --- Global Styles --- */
+ 
         * {
             margin: 0;
             padding: 0;
@@ -108,8 +107,8 @@
         }
 
         .social-links {
-            position: relative;  /* important for z-index to work */
-            z-index: 2;          /* higher than canvas */
+            position: relative; 
+            z-index: 2;          
             text-align: center;
             margin: 2rem 0;
         }
@@ -208,12 +207,12 @@
 </head>
 
 <body>
-    <!-- Matrix Rain Canvas -->
+
     <canvas id="matrixCanvas"></canvas>
 
     <header>About — A. M. Zayed Abdullah</header>
 
-    <!-- Who Am I -->
+  
     <div class="section">
         
         <div class="text">
@@ -226,10 +225,10 @@
         <div class="image"><img src="img/uiucsefest.jpg" alt="Developer profile"></div>
     </div>
 
-    <!-- Recognition & Gratitude -->
+
     <div class="section">
         <div class="image"><img src="img/mariner.jpg" alt="UIU CSE Fest">
-            <!-- <div class="image"><img src="img/mariner_zayed.png" alt="UIU CSE Fest"> -->
+       
             <div class="text">
                 <h2>Recognition & Gratitude</h2>
                 <br>
@@ -249,7 +248,7 @@
         </div>
     </div>
 
-    <!-- Work & Education -->
+
     <div class="section">
         <div class="text">
             <h2>Education</h2>
@@ -280,7 +279,7 @@
         
     </div>
 
-<!-- My Previous Work -->
+
     <div class="section">
         <div class="text">
             <h2>My Previous Work</h2>
@@ -298,8 +297,8 @@
         <div class="image"><img src="img/ghuri.jpg" alt="Ghuri Studio"></div>
     </div>
 
-    <!-- Beyond Code
-    <div class="section">
+ 
+    <!-- <div class="section">
         <div class="text">
             <h2>Beyond Code</h2>
             <p>
@@ -308,25 +307,24 @@
             </p>
         </div>
         <div class="image"><img src="img/media.jpg" alt="Creative work"></div>
-    </div> -->
+    </div> --> 
 
 
 
-    <!-- Social Links -->
+
     <div class="social-links">
         <a href="https://github.com/amzayedabdullah" target="_blank">GitHub</a>
         <a href="https://www.facebook.com/amzayed.abdullah" target="_blank">Facebook</a>
         <a href="https://www.instagram.com/amzayedabdullah/" target="_blank">Instagram</a>
     </div>
 
-    <footer>© 2025 Zayed | Built with ❤️ by <span class="accent">FullStackRig⚡</footer>
 
     <div class="back-wrapper" style="text-align:center; z-index:1; position:relative; margin:3rem auto;">
     <a href="index.html" class="btn-back" aria-label="Back to Home">← Back to Home</a>
     </div>
 
     <script>
-        // --- Animate sections on scroll ---
+   
         const sections = document.querySelectorAll('.section');
         const revealOnScroll = () => {
             const triggerBottom = window.innerHeight * 0.85;
@@ -340,7 +338,7 @@
 
         
 
-        // --- Matrix Rain Effect ---
+
         const canvas = document.getElementById('matrixCanvas');
         const ctx = canvas.getContext('2d');
 
