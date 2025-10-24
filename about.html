@@ -132,6 +132,26 @@
             box-shadow:0 0 25px #00ffff;
         }
 
+        .btn-back {
+      display:inline-block;
+      margin:3rem auto;
+      padding:10px 25px;
+      border-radius:25px;
+      border:2px solid #00ffff;
+      color:#00ffff;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s ease;
+      text-align:center;
+      z-index:1; position:relative;
+    }
+
+    .btn-back:hover {
+      background:#00ffff;
+      color:#000;
+      box-shadow:0 0 25px #00ffff;
+    }
+
 
 
         footer {
@@ -300,6 +320,10 @@
     </div>
 
     <footer>© 2025 Zayed | Built with ❤️ by <span class="accent">FullStackRig⚡</footer>
+
+    <div class="back-wrapper" style="text-align:center; z-index:1; position:relative; margin:3rem auto;">
+    <a href="index.html" class="btn-back" aria-label="Back to Home">← Back to Home</a>
+    </div>
 
     <script>
         // --- Animate sections on scroll ---
