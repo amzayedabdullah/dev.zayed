@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — A. M. Zayed Abdullah</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Orbitron:wght@600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* --- Global Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #e0f7ff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        canvas#matrixCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            background: black;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.3rem;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px #00ffff;
+            z-index: 1;
+            position: relative;
+            animation: glowPulse 3s infinite alternate;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 3rem 1rem;
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 25px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .text {
+            flex: 1 1 500px;
+            padding: 1.5rem;
+        }
+
+        .text h2 {
+            color: #00ffff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .text p {
+            line-height: 1.8;
+            color: #bdefff;
+            font-size: 1.05rem;
+        }
+
+        .image {
+            flex: 1 1 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image img {
+            width: 90%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+            transition: all 0.5s ease;
+        }
+
+        .image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+        }
+
+        .social-links {
+            position: relative;  /* important for z-index to work */
+            z-index: 2;          /* higher than canvas */
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            text-decoration: none;
+            color: #00ffff;
+            border: 2px solid #00ffff;
+            margin: 0.5rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: 0.3s ease;
+            font-weight: 600;
+        }
+
+
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #aaa;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            line-height: 1.8;
+        }
+
+        ul li {
+            margin: 6px 0;
+        }
+
+        @keyframes glowPulse {
+            from {
+                text-shadow: 0 0 10px #00ffff;
+            }
+
+            to {
+                text-shadow: 0 0 25px #00ffee;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width:768px) {
+            .section {
+                flex-direction: column;
+            }
+
+            .image img {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrixCanvas"></canvas>
+
+    <header>About — A. M. Zayed Abdullah</header>
+
+    <!-- Who Am I -->
+    <div class="section">
+        
+        <div class="text">
+            <h2>Who Am I?</h2>
+            <br>
+            <p>
+                I’m <strong>A. M. Zayed Abdullah</strong> — a CS Student, Developer, Graphics Designer, Animator, Audio & Video Expert from Bangladesh. My journey blends <strong>AI, Aerospace Technology, Mechanical Design and Graphics Design</strong> to build experiences that connect imagination with innovation.
+            </p>
+        </div>
+        <div class="image"><img src="img/uiucsefest.jpg" alt="Developer profile"></div>
+    </div>
+
+    <!-- Recognition & Gratitude -->
+    <div class="section">
+        <div class="image"><img src="img/mariner.jpg" alt="UIU CSE Fest">
+            <!-- <div class="image"><img src="img/mariner_zayed.png" alt="UIU CSE Fest"> -->
+            <div class="text">
+                <h2>Recognition & Gratitude</h2>
+                <br>
+                <p>
+                    Proud to be part of
+                    <a href="https://csefest.uiu.ac.bd/gratitude" target="_blank" style="color:#00ffff;"><strong>UIU CSE
+                        Fest</strong></a>,
+                    as Graphics Designer.
+                </p>
+                <p>
+                    Proud to be part of
+                    <a href="https://uwra.uiu.ac.bd/index.php/about/" target="_blank" style="color:#00ffff;"><strong>UIU
+                        Mariner</strong></a>,
+                    as Mechanical Designer, Manufacturer & ROV Co-Pilot.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Work & Education -->
+    <div class="section">
+        <div class="text">
+            <h2>Education</h2>
+            <p>Here’s a glimpse of my educational background</p>
+            <br>
+            <p>
+                <strong><a href="https://www.uiu.ac.bd/" target="_blank" style="color:#00ffff;">United International University (UIU)</a></strong> - Stuyding B.Sc. in Computer Science & Engineering<br>
+                <strong><a href="https://bciccollege.edu.bd/" target="_blank" style="color:#00ffff;">BCIC College</a></strong> - Completed Higher Secondary Education<br>
+                <strong><a href="https://mubc.edu.bd/" target="_blank" style="color:#00ffff;">Monipur High School & College (Branch-1)</a></strong> - Completed Secondary Education
+            </p>
+        </div>
+        <div class="image"><img src="img/uiu.jpg" alt="Work and education"></div>
+    </div>
+
+    <!-- My Work -->
+    <div class="section">
+        <div class="image"><img src="img/mariner_zayed.png" alt="UIU Mariner"></div>
+        <div class="text">
+            <h2>My Work</h2>
+            <br>
+            <p>
+            <ul>
+                <li>Mechanical Designer, Manufacturer & ROV Co-Pilot - <strong><a href="https://www.facebook.com/uiumrc" target="_blank" style="color:#00ffff;">UIU Advanced Underwater Robotics & Automation Crew</a></strong></li>
+                <li>Head of Graphics - <strong><a href="https://www.facebook.com/uiuappf" target="_blank" style="color:#00ffff;">UIU APP Forum</a></strong></li>
+            </ul>
+            </p>
+        </div>
+        
+    </div>
+
+<!-- My Previous Work -->
+    <div class="section">
+        <div class="text">
+            <h2>My Previous Work</h2>
+            <br>
+            <p>
+            <ul>
+                <li>Founder & CEO - <strong><a href="https://www.facebook.com/skullknox" target="_blank" style="color:#00ffff;">SkullKnox</a></strong></li>
+                <li>Content Creator - <strong><a href="https://www.facebook.com/tutoriya.tech" target="_blank" style="color:#00ffff;">Tutoriya</a></strong></li>
+                <li>Band Manager - <strong><a href="https://www.facebook.com/metronixbd" target="_blank" style="color:#00ffff;">METRO-nix</a></strong></li>
+                <li>President of Editing - <strong><a href="https://www.facebook.com/mubcpvc" target="_blank" style="color:#00ffff;">MUBC Photography Club Branch-1</a></strong></li>
+                <li>Video & Audio Editor - <strong><a href="https://www.facebook.com/ghuristudio" target="_blank" style="color:#00ffff;">Ghuri Studio</a></strong></li>
+            </ul>
+            </p>
+        </div>
+        <div class="image"><img src="img/ghuri.jpg" alt="Ghuri Studio"></div>
+    </div>
+
+    <!-- Beyond Code
+    <div class="section">
+        <div class="text">
+            <h2>Beyond Code</h2>
+            <p>
+                Outside coding, I’m a <strong>video editor, animator, and audio designer</strong>.
+                From motion graphics to sound design, I ensure every project looks and sounds its best.
+            </p>
+        </div>
+        <div class="image"><img src="img/media.jpg" alt="Creative work"></div>
+    </div> -->
+
+
+
+    <!-- Social Links -->
+    <div class="social-links">
+        <a href="https://github.com/amzayedabdullah" target="_blank">GitHub</a>
+        <a href="https://www.facebook.com/amzayed.abdullah" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/amzayedabdullah/" target="_blank">Instagram</a>
+    </div>
+
+    <footer>© 2025 Zayed | Built with ❤️ by <span class="accent">FullStackRig⚡</footer>
+
+    <script>
+        // --- Animate sections on scroll ---
+        const sections = document.querySelectorAll('.section');
+        const revealOnScroll = () => {
+            const triggerBottom = window.innerHeight * 0.85;
+            sections.forEach(sec => {
+                const boxTop = sec.getBoundingClientRect().top;
+                if (boxTop < triggerBottom) sec.style.opacity = '1';
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        
+
+        // --- Matrix Rain Effect ---
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const letters = "アァカサタナハマヤャラワガザダバパイィキシチニヒミリギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレゲゼデベペオォコソトノホモヨョロゴゾドボポ0123456789ABCDEF";
+        const fontSize = 12;
+        const columns = Math.floor(canvas.width / fontSize);
+        const drops = Array(columns).fill(0);
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0,0,0,0.05)";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#ABFCFCFF";
+            ctx.font = fontSize + "px monospace";
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters.charAt(Math.floor(Math.random() * letters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 1;
+                drops[i]++;
+            }
+            requestAnimationFrame(drawMatrix);
+        }
+        drawMatrix();
+    </script>
+</body>
+
+</html>
